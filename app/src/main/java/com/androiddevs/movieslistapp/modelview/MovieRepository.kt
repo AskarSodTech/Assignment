@@ -6,7 +6,7 @@ import retrofit2.Call
 
 class MovieRepository {
     val apiService = ApiClient.apiService
-    fun getMovies(query: String): Call<Title> {
+    suspend fun getMovies(query: String): Call<Title> {
         return apiService.getMovies(query)
     }
 }

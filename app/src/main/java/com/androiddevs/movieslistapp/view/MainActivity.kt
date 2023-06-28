@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androiddevs.movieslistapp.adapter.TitleAdapter
+import com.androiddevs.movieslistapp.databinding.ActivityMainBinding
 import com.androiddevs.movieslistapp.modelview.MovieViewModel
-import com.androiddevs.mvvmnewsapp.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = layoutManager
     }
 
+    /***
+     * Init progress dailog
+     */
     private fun initDailog() {
         progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Loading...")

@@ -8,6 +8,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import java.util.concurrent.TimeUnit
+
 
 interface ApiService {
     @GET("title/find")
@@ -36,6 +38,8 @@ object ApiClient {
                     .build()
                 chain.proceed(request)
             }
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
             .build()
 
         Retrofit.Builder()
