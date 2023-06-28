@@ -19,6 +19,8 @@ interface ApiService {
 
 object ApiClient {
     private const val BASE_URL = "https://imdb8.p.rapidapi.com/"
+    private const val API_KEY = "arGiw6O4PtmshRnu6VGgrcJiO3DJp1cuMVojsnEABg5WRSaZVu"
+    private const val HOST = "imdb8.p.rapidapi.com"
 
     private val retrofit: Retrofit by lazy {
         val interceptor = HttpLoggingInterceptor().apply {
@@ -29,8 +31,8 @@ object ApiClient {
             .addInterceptor(interceptor)
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
-                    .header("X-RapidAPI-Key", "arGiw6O4PtmshRnu6VGgrcJiO3DJp1cuMVojsnEABg5WRSaZVu")
-                    .header("X-RapidAPI-Host", "imdb8.p.rapidapi.com")
+                    .header("X-RapidAPI-Key", API_KEY)
+                    .header("X-RapidAPI-Host", HOST)
                     .build()
                 chain.proceed(request)
             }
