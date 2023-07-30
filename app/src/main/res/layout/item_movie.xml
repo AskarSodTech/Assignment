@@ -1,0 +1,33 @@
+<!-- item_movie.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <!-- Declare the variable for the Movie object -->
+        <variable
+            name="movie"
+            type="com.androiddevs.movieslistapp.modelview.MovieRepository.ContentItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Add the views for the movie item here -->
+        <ImageView
+            android:id="@+id/moviePosterImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/movieNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.name}"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="8dp" />
+    </LinearLayout>
+</layout>
