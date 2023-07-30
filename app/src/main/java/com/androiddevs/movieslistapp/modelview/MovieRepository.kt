@@ -16,45 +16,6 @@ class MovieRepository(private val context: Context) {
         return contentItems?.content?.map { it.toMovie() } ?: emptyList()
     }
 
-    fun parseJsonFile(context: Context, fileName: String): PageData? {
-        try {
-            val inputStream = context.assets.open(fileName)
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-
-            val jsonStr = String(buffer, Charsets.UTF_8)
-
-            // Parse the JSON data using Gson
-            val gson = Gson()
-            val pageDataM = gson.fromJson(jsonStr, PageData::class.java)
-
-            // Now you can access the data from the parsed object
-            val title = pageDataM.page.title
-            val totalContentItems = pageDataM.page.totalContentItems
-            val pageNum = pageDataM.page.pageNum
-            val pageSize = pageDataM.page.pageSize
-            val contentItems = pageDataM.page.contentItems
-
-            // Access individual content items if available
-            contentItems?.content?.let { contentList ->
-                for (content in contentList) {
-                    val name = content.name
-                    val posterImage = content.posterImage
-                    // Process the data as needed
-                }
-            }
-            return pageDataM
-        } catch (e: Exception) {
-
-            return null
-            e.printStackTrace()
-        }
-
-
-    }
-
     data class PageData(
         val page: Page
     )

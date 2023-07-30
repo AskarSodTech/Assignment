@@ -16,6 +16,12 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
     private var isLoading = false
 
 
+    init {
+        // Initialize the data when ViewModel is created
+        val initialFileName = "content1.json" // Set the initial filename as the first page's filename
+        loadNextPage(initialFileName)
+    }
+
 
     // Check if there are more pages to load
     fun hasMorePages(totalContentItems: Int, pageSize: Int): Boolean {
@@ -35,6 +41,7 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
                 _movieList.value = allMovies.take((currentPage + 1) * PAGE_SIZE)
                 currentPage++
                 isLoading = false
+
             }
         }
     }
