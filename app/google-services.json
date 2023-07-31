@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "420269460776",
+    "project_id": "mitsogo-86b3f",
+    "storage_bucket": "mitsogo-86b3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420269460776:android:4933e64f1a21b408ead41d",
+        "android_client_info": {
+          "package_name": "com.androiddevs.movielistapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420269460776-3j9jvuf5pspgv54611a5h7kr5kahkijq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpox550BTh5qv_AmrTV40UoUBVcMuqXwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420269460776-3j9jvuf5pspgv54611a5h7kr5kahkijq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420269460776:android:b43a2f49dfcdcb4aead41d",
+        "android_client_info": {
+          "package_name": "com.example.myfcmappmits"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420269460776-a8d4hvu268sbsctdm5ob2ko1b2p2842q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myfcmappmits",
+            "certificate_hash": "6a2524eec7d8969c96cda3590554c82b8de40f1e"
+          }
+        },
+        {
+          "client_id": "420269460776-3j9jvuf5pspgv54611a5h7kr5kahkijq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpox550BTh5qv_AmrTV40UoUBVcMuqXwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420269460776-3j9jvuf5pspgv54611a5h7kr5kahkijq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

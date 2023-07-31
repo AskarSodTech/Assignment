@@ -1,8 +1,8 @@
 package com.androiddevs.movieslistapp.di
 
 import android.content.Context
-import com.androiddevs.movieslistapp.modelview.MovieRepository
-import com.androiddevs.movieslistapp.modelview.MovieViewModelFactory
+import com.androiddevs.movieslistapp.repository.MovieRepository
+import com.androiddevs.movieslistapp.repository.MovieViewModelFactory
 import dagger.Module
 import dagger.Provides
 

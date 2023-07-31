@@ -14,13 +14,12 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.androiddevs.movieslistapp.MyApplication
 import com.androiddevs.movieslistapp.R
 import com.androiddevs.movieslistapp.adapter.MovieAdapter
 import com.androiddevs.movieslistapp.databinding.ActivityMainBinding
-import com.androiddevs.movieslistapp.modelview.MovieRepository
+import com.androiddevs.movieslistapp.repository.MovieRepository
 import com.androiddevs.movieslistapp.modelview.MovieViewModel
-import com.androiddevs.movieslistapp.modelview.MovieViewModelFactory
+import com.androiddevs.movieslistapp.repository.MovieViewModelFactory
 import javax.inject.Inject
 
 
@@ -52,17 +51,13 @@ class MainActivity : AppCompatActivity() {
         val movieRepository = MovieRepository(applicationContext)
         movieViewModel = ViewModelProvider(this, MovieViewModelFactory(movieRepository))
             .get(MovieViewModel::class.java)
-
         movieAdapter = MovieAdapter()
-        // Set the appropriate grid span count based on the device orientation
         binding.recyclerView.apply {
             val spanCount = if (isPortrait()) 3 else 7
             layoutManager = GridLayoutManager(context, spanCount)
             adapter = movieAdapter
             addOnScrollListener(onScrollListener)
         }
-
-        // Observe LiveData from ViewModel
         movieViewModel.movieList.observe(this) { movies ->
             movieAdapter.updateData(movies)
         }
@@ -83,7 +78,6 @@ class MainActivity : AppCompatActivity() {
                     movieAdapter.updateData(filteredMovies)
                     true
                 } else {
-                    // Clear the search and show the original list
                     movieAdapter.updateData(movieViewModel.movieList.value.orEmpty())
                     false
                 }
@@ -92,7 +86,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.searchView.setOnCloseListener {
-            // Clear the search and show the original list
             movieAdapter.updateData(movieViewModel.movieList.value.orEmpty())
             isSearchMode = false
             false
@@ -123,7 +116,7 @@ class MainActivity : AppCompatActivity() {
         if (isLoading) return
 
         val fileName = "content${movieViewModel.currentPage + 1}.json"
-        val totalContentItems = 54 // Total number of items in all pages (you can retrieve this from the JSON)
+        val totalContentItems = 54
         if (movieViewModel.hasMorePages(totalContentItems, pageSize)) {
             isLoading = true
             binding.progressBar.visibility = View.VISIBLE

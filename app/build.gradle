@@ -3,10 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.android.application'
+
 
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 33
     buildToolsVersion "29.0.3"
 
     defaultConfig {
@@ -87,5 +89,12 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.11' // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
 
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    implementation 'com.google.firebase:firebase-crashlytics:18.4.0'
 
 }
+apply plugin: 'com.google.gms.google-services' // Make sure this line is below the Crashlytics plugin
+apply plugin: 'com.google.firebase.crashlytics'

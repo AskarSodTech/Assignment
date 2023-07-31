@@ -1,4 +1,4 @@
-package com.androiddevs.movieslistapp.modelview
+package com.androiddevs.movieslistapp.repository
 
 import android.content.Context
 import com.androiddevs.movieslistapp.model.Movie

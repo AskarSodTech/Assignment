@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.androiddevs.movieslistapp.model.Movie
+import com.androiddevs.movieslistapp.repository.MovieRepository
 import kotlinx.coroutines.launch
 
 class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel() {
@@ -17,8 +18,7 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
 
 
     init {
-        // Initialize the data when ViewModel is created
-        val initialFileName = "content1.json" // Set the initial filename as the first page's filename
+        val initialFileName = "content1.json"
         loadNextPage(initialFileName)
     }
 
@@ -32,7 +32,7 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
         if (isLoading) return
 
         val fileName = "content${currentPage + 1}.json"
-        val totalContentItems = 54 // Total number of items in all pages (you can retrieve this from the JSON)
+        val totalContentItems = 54
         if (hasMorePages(totalContentItems, PAGE_SIZE)) {
             isLoading = true
             viewModelScope.launch {

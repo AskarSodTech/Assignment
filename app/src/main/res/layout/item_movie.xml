@@ -4,7 +4,7 @@
         <!-- Declare the variable for the Movie object -->
         <variable
             name="movie"
-            type="com.androiddevs.movieslistapp.modelview.MovieRepository.ContentItem" />
+            type="com.androiddevs.movieslistapp.repository.MovieRepository" />
     </data>
 
     <LinearLayout

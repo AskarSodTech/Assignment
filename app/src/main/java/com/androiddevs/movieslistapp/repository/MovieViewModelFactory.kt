@@ -1,7 +1,8 @@
-package com.androiddevs.movieslistapp.modelview
+package com.androiddevs.movieslistapp.repository
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.androiddevs.movieslistapp.modelview.MovieViewModel
 
 class MovieViewModelFactory(private val movieRepository: MovieRepository) : ViewModelProvider.Factory {
 

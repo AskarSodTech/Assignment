@@ -7,7 +7,7 @@ Release Notes: Version 1.0
 2. Infinite Scrolling: Users can scroll through the movie list seamlessly with infinite scrolling. As the user approaches the end of the list, more content is dynamically loaded to ensure a continuous browsing experience.
 3. Search Functionality: A search bar is provided to allow users to search for movies by title. The search bar activates when the user enters at least three characters, and the search results update in real-time as the user types.
 4. Placeholder Images: For any movie without a valid poster image, a placeholder image is displayed to ensure a consistent and aesthetic user interface.
-
+5.Crashlytics added for app distribution
 **Known Issues and Limitations:**
 
 1. Missing Posters: Some movies may have missing poster images, resulting in a placeholder being displayed. This is due to incomplete data in the JSON content files. Future updates will address this issue by providing complete data for all movies.

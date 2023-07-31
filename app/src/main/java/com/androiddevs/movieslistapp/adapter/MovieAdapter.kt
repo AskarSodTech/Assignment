@@ -16,7 +16,7 @@ class MovieAdapter() : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     fun updateData(newData: List<Movie>) {
         val diffResult = DiffUtil.calculateDiff(MovieDiffCallback(movieList, newData))
-        movieList = newData // Update the movieList with the new data
+        movieList = newData
         diffResult.dispatchUpdatesTo(this)
     }
 
@@ -37,7 +37,7 @@ class MovieAdapter() : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         fun bind(movie: Movie) {
             binding.movieNameTextView.text = movie.getTruncatedName(20)
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.placeholder_for_missing_posters) // Placeholder image resource
+                .placeholder(R.drawable.placeholder_for_missing_posters)
                 .error(R.drawable.placeholder_for_missing_posters)
             Glide.with(binding.root)
                 .load(getImageResourceId(movie.posterImage))
