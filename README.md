@@ -11,7 +11,7 @@ Release Notes: Version 1.0
 **Known Issues and Limitations:**
 1. Missing Posters: Some movies may have missing poster images, resulting in a placeholder being displayed. This is due to incomplete data in the JSON content files. Future updates will address this issue by providing complete data for all movies.
 2. No Error Handling: The app currently lacks comprehensive error handling for scenarios such as JSON parsing failures or network issues. Future updates will include robust error handling to provide a better user experience and prevent crashes.
-3. Limited Content: The app currently only displays movies from the "Romantic Comedy" category on Page 3. Future versions may extend the app to include more categories and pages for a broader selection of movies.
+3. Limited Content: The app currently only displays movies from the "Romantic Comedy" category from local json file. Future versions may extend the app to include more categories and pages for a broader selection of movies.
 
 **Future Enhancements:**
 
@@ -20,8 +20,8 @@ Release Notes: Version 1.0
 3. Movie Details: We are working on adding a detailed view for each movie, providing users with more information, such as synopsis, cast, and trailers.
 4. Offline Support: In the upcoming releases, we will introduce offline support, allowing users to browse and search for movies even without an internet connection.
 5. Enhanced Error Handling: We aim to implement comprehensive error handling to provide meaningful error messages and handle edge cases more gracefully.
-6. We hope you enjoy using the app and discovering your favorite romantic comedies. If you encounter any issues or have suggestions for improvement, please don't hesitate to reach out to our support team.
 
+We hope you enjoy using the app and discovering your favorite romantic comedies. If you encounter any issues or have suggestions for improvement, please don't hesitate to reach out to our support team.
 Thank you for choosing our app!
 MovieListApp
 Development Team

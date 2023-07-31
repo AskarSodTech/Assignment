@@ -2,15 +2,20 @@ package com.androiddevs.movieslistapp.view
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androiddevs.movieslistapp.MyApplication
+import com.androiddevs.movieslistapp.R
 import com.androiddevs.movieslistapp.adapter.MovieAdapter
 import com.androiddevs.movieslistapp.databinding.ActivityMainBinding
 import com.androiddevs.movieslistapp.modelview.MovieRepository
@@ -86,6 +91,16 @@ class MainActivity : AppCompatActivity() {
             isSearchMode = false
             false
         }
+
+        val hintTextColor = ContextCompat.getColor(this, R.color.grayTextColor)
+        val spannableStringBuilder = SpannableStringBuilder("Romantic Comedy")
+        spannableStringBuilder.setSpan(
+            ForegroundColorSpan(hintTextColor),
+            0,
+            spannableStringBuilder.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        binding.searchView.queryHint = spannableStringBuilder
     }
 
     /***
