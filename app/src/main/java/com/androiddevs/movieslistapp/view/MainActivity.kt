@@ -40,7 +40,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initializeViews()
+        setupSearchView()
+        loadNextPage()
+    }
 
+    /**
+     * Method to initialize values and listners
+     */
+    private fun initializeViews() {
         val movieRepository = MovieRepository(applicationContext)
         movieViewModel = ViewModelProvider(this, MovieViewModelFactory(movieRepository))
             .get(MovieViewModel::class.java)
@@ -58,13 +66,11 @@ class MainActivity : AppCompatActivity() {
         movieViewModel.movieList.observe(this) { movies ->
             movieAdapter.updateData(movies)
         }
-
-        setupSearchView()
-        loadNextPage()
     }
 
-
-
+    /**
+     * Method to set the searchView
+     */
     private fun setupSearchView() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
